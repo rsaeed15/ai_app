@@ -15,7 +15,7 @@ This app predicts the **Loan Default Probability**  Rifat Saeed
 
 # Displaying images on the front end
 from PIL import Image
-image = Image.open('webPic.JPG')
+image = Image.open('webPic.jpg')
 
 st.image(image, caption='Loan Default Probability')
 st.sidebar.header('User Input Parameters')
