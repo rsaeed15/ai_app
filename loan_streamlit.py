@@ -65,7 +65,7 @@ features = pd.DataFrame(data,index=[0])
 st.subheader('User Input parameters')
 st.write(features)
 
-dataset = pd.read_csv('C:\Machine-Learning-Channel\loan_data.csv.gz', compression='gzip',low_memory=True)
+dataset = pd.read_csv('loan_data.csv.gz', compression='gzip',low_memory=True)
 
 from sklearn.preprocessing import LabelEncoder
 le = LabelEncoder()
