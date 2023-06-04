@@ -92,13 +92,10 @@ with col1:
   st.subheader('Evaluation Report')
 with col2:
   if prediction==0:
-    #st.write(round(prediction_proba[0,0],0)*100,'% :')	
-    st.markdown('<p style="font-size:30px; color:red;">Not Approved </p>', unsafe_allow_html=True)
+   st.markdown('<p style="font-size:30px; color:red;">Not Approved </p>', unsafe_allow_html=True)
   elif prediction==2:
-    #st.write(round(prediction_proba[0,2],0)*100,'% :')
     st.markdown('<p style="font-size:30px; color:green;">Approved </p>', unsafe_allow_html=True)
   else:
-    #st.write(round(prediction_proba[0,1],0)*100,'% :')
     st.markdown('<p style="font-size:30px; color:red;">Default Risk </p>', unsafe_allow_html=True)
  
 
@@ -117,8 +114,8 @@ fig = plt.figure(figsize=(10,5))
 df = pd.DataFrame(prediction_proba, columns = labels)
 sns.barplot(data=df*100)
 
-sns.set(rc={'figure.figsize':(10,5)}, font_scale=1.0)
-sns.set_style({'axes.facecolor':'white', 'grid.color': '.8', 'font.family':'Times New Roman'})
+# sns.set(rc={'figure.figsize':(10,5)}, font_scale=1.0)
+# sns.set_style({'axes.facecolor':'white', 'grid.color': '.8', 'font.family':'Times New Roman'})
 
 # Add figure in streamlit app
 st.pyplot(fig)
