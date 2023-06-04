@@ -10,12 +10,12 @@ import seaborn as sns
 st.write("""
 # Loan Default Probability Prediction
 
-This app predicts the **Loan Default Probability**  Author: Rifat Saeed
+This app predicts the **Loan Default Probability**  Rifat Saeed
 """)
 
 # Displaying images on the front end
 from PIL import Image
-image = Image.open('office.JPG')
+image = Image.open('webPic.JPG')
 
 st.image(image, caption='Loan Default Probability')
 st.sidebar.header('User Input Parameters')
@@ -61,7 +61,6 @@ data = {'loan': loan,
 	    'emp_length':emp_length,
             'borrower_score':borrower_score}
 features = pd.DataFrame(data,index=[0])
-
 	 
 st.subheader('User Input parameters')
 st.write(features)
@@ -106,15 +105,20 @@ with col2:
 st.write("######")
 st.write("######")
 
-st.subheader("Probabilty of Customer's Loan Approval")
+new_title = '<p color:Black; font-size: 35px;">Probabilty of Customer Loan Approval</p>'
+st.markdown(new_title, unsafe_allow_html=True)
+
 pred=prediction_proba.flatten()
 labels=['Not Safe','Default','Safe Loan']
 
 sns.set()
 fig = plt.figure(figsize=(10,5))
-sns.barplot(x=labels,y=pred*100, alpha=0.8)
+
+df = pd.DataFrame(prediction_proba, columns = labels)
+sns.barplot(data=df*100)
 
 sns.set(rc={'figure.figsize':(10,5)}, font_scale=1.0)
 sns.set_style({'axes.facecolor':'white', 'grid.color': '.8', 'font.family':'Times New Roman'})
 
 # Add figure in streamlit app
+st.pyplot(fig)
