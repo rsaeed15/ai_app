@@ -110,12 +110,13 @@ labels=['Not Safe','Default','Safe Loan']
 
 sns.set()
 fig = plt.figure(figsize=(10,5))
+sns.barplot(x=labels,y=pred*100)
 
-df = pd.DataFrame(prediction_proba, columns = labels)
-sns.barplot(data=df*100)
+#df = pd.DataFrame(prediction_proba, columns = labels)
+#sns.barplot(data=df*100)
 
-# sns.set(rc={'figure.figsize':(10,5)}, font_scale=1.0)
-# sns.set_style({'axes.facecolor':'white', 'grid.color': '.8', 'font.family':'Times New Roman'})
+sns.set(rc={'figure.figsize':(10,5)}, font_scale=1.0)
+sns.set_style({'axes.facecolor':'white', 'grid.color': '.8', 'font.family':'Times New Roman'})
 
 # Add figure in streamlit app
 st.pyplot(fig)
