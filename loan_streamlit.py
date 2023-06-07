@@ -77,36 +77,3 @@ labels=['Not Safe','Default','Safe Loan']
 st.write("")
 st.write("")
 
-#define multiple columns, add two graphs
-col1, col2 = st.columns(2)
-with col1:
-  new_title = '<p style="font-family:Calibri;font-size:20px;color:Black;"><strong>Probabilty of Customer Loan Approval</strong></p>'
-  st.markdown(new_title, unsafe_allow_html=True)
-  labels=['Not Safe','Default','Safe Loan']
-
-  sns.set(font_scale=2)
-  fig = plt.figure(figsize=(15,10))
-  df = pd.DataFrame(prediction_proba, columns = labels)
-  sns.barplot(data=df*100,order = ['Safe Loan', 'Not Safe','Default'])
-# Add figure in streamlit app
-  st.pyplot(fig)
-with col2:
-  st.write("")
-  st.write("")
-  st.write("")
-  st.write("")
-  st.write("")
-  st.write("")
-  st.write("")
-  st.write("")
-  st.write("")
-  st.write("")
-  st.write("")
-  st.write("")
-
-  if prediction==0:
-    st.markdown('<p style="font-family:Calibri;font-size:40px; color:red;text-align:center;"><strong>Not Approved </strong> </p>', unsafe_allow_html=True)
-  elif prediction==2:
-    st.markdown('<p style="font-family:Calibri;font-size:40px; color:green;text-align:center;"><strong>Approved </strong> </p>', unsafe_allow_html=True)
-  else:
-    st.markdown('<p style="font-family:Calibri;font-size:40px; color:red;text-align:center;"><strong>Default Risk </strong></p>', unsafe_allow_html=True)
