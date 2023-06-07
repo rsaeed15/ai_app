@@ -114,7 +114,7 @@ with col2:
   st.write("")
 
   if prediction==0:
-    st.markdown('<p style="font-family:Calibri;font-size:30px; color:dark red;text-align:center;"><strong>Not Approved </strong> </p>', unsafe_allow_html=True)
+    st.markdown('<p style="font-family:Calibri;font-size:30px; color:dark red;text-align:center;"><strong>NOT APPROVED </strong> </p>', unsafe_allow_html=True)
   elif prediction==2:
     st.markdown('<p style="font-family:Calibri;font-size:30px; color:green;text-align:center;"><strong>Approved </strong> </p>', unsafe_allow_html=True)
   else:
