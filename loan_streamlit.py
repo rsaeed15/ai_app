@@ -75,7 +75,7 @@ model.fit(X_train, y_train)
 
 prediction_proba = model.predict_proba(features)
 pred=prediction_proba.flatten()
-#prediction = model.predict(features)
+prediction = model.predict(features)
 labels=['Not Safe','Default','Safe Loan']
 
 st.write("")
