@@ -74,8 +74,6 @@ model = GradientBoostingClassifier(max_depth= 5, n_estimators= 180)
 model.fit(X_train, y_train)
 
 prediction_proba = model.predict_proba(features)
-prediction = model.predict(features)
-
 labels=['Not Safe','Default','Safe Loan']
 
 st.write("")
@@ -93,10 +91,10 @@ with col1:
  sns.set(font_scale=2)
  fig = plt.figure(figsize=(15,10))
 
- df = pd.DataFrame(prediction, columns = labels)
- sns.barplot(data=df*100,order = ['Safe Loan', 'Not Safe','Default'])
+ df = pd.DataFrame(prediction_proba, columns = labels)
+ #sns.barplot(data=df*100,order = ['Safe Loan', 'Not Safe','Default'])
 # Add figure in streamlit app
- st.pyplot(fig)
+ #st.pyplot(fig)
 
 with col2:
   st.write("")
