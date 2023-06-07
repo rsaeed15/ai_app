@@ -100,7 +100,7 @@ with col1:
 
 sns.barplot(x=labels,y=pred*100,order=['Safe Loan','Not Safe','Default'])
 # Add figure in streamlit app
- st.pyplot(fig)
+st.pyplot(fig)
 
 with col2:
   st.write("")
