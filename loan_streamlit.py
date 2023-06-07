@@ -95,7 +95,7 @@ with col1:
 
  df = pd.DataFrame(prediction_proba, columns = labels)
  st.write(df)	
- sns.barplot(x=labels,y=pred*100,order=['Charged Off','Approved','Default'])
+ sns.barplot(x=labels,y=pred*100,order=['Not Safe','Safe Loan','Default'])
 # Add figure in streamlit app
  st.pyplot(fig)
 
