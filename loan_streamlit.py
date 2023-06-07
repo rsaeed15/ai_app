@@ -74,7 +74,8 @@ model = GradientBoostingClassifier(max_depth= 5, n_estimators= 180)
 model.fit(X_train, y_train)
 
 prediction_proba = model.predict_proba(features)
-prediction = model.predict(features)
+pred=prediction_proba.flatten()
+#prediction = model.predict(features)
 labels=['Not Safe','Default','Safe Loan']
 
 st.write("")
