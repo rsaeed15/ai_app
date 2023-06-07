@@ -116,7 +116,7 @@ with col2:
   if prediction==0:
     st.markdown('<p style="font-family:Calibri;font-size:30px; color:dark red;text-align:center;"><strong>NOT APPROVED </strong> </p>', unsafe_allow_html=True)
   elif prediction==2:
-    st.markdown('<p style="font-family:Calibri;font-size:30px; color:green;text-align:center;"><strong>Approved </strong> </p>', unsafe_allow_html=True)
+    st.markdown('<p style="font-family:Calibri;font-size:30px; color:green;text-align:center;"><strong>APPROVED </strong> </p>', unsafe_allow_html=True)
   else:
-    st.markdown('<p style="font-family:Calibri;font-size:30px; color:dark red;text-align:center;"><strong>Default Risk </strong></p>', unsafe_allow_html=True)
+    st.markdown('<p style="font-family:Calibri;font-size:30px; color:dark red;text-align:center;"><strong>DEFAULT RISK </strong></p>', unsafe_allow_html=True)
 
