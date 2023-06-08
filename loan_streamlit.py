@@ -6,6 +6,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.model_selection import GridSearchCV
 import matplotlib.pyplot as plt
 import seaborn as sns
+import time
 
 st.write("""
 # Loan Default Probability Prediction
@@ -123,4 +124,21 @@ with col2:
     st.markdown('<p style="font-family:Calibri;font-size:30px; color:green;text-align:center;"><strong>APPROVED </strong> </p>', unsafe_allow_html=True)
   else:
     st.markdown('<p style="font-family:Calibri;font-size:30px; color:dark red;text-align:center;"><strong>DEFAULT RISK </strong></p>', unsafe_allow_html=True)
+
+
+
+'Starting a long computation...'
+
+# Add a placeholder
+latest_iteration = st.empty()
+bar = st.progress(0)
+
+for i in range(100):
+  # Update the progress bar with each iteration.
+  latest_iteration.text(f'Iteration {i+1}')
+  bar.progress(i + 1)
+  time.sleep(0.1)
+
+'...and now we\'re done!'
+
 
