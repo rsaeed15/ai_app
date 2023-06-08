@@ -59,7 +59,7 @@ features = pd.DataFrame(data,index=[0])
 def load_data(path):
     dataset = pd.read_csv(path)
     return dataset
-dataset = load_data('loan_data.csv.gz', compression='gzip',low_memory=True')
+dataset = load_data('loan_data.csv.gz')
 #dataset = pd.read_csv('loan_data.csv.gz', compression='gzip',low_memory=True)
 
 from sklearn.preprocessing import LabelEncoder
