@@ -61,7 +61,7 @@ def load_data(path):
     dataset = pd.read_csv(path)
     return dataset
 dataset = load_data('loan_data.csv.gz')
-dataset=dataset.iloc[0:5000,:]
+#dataset=dataset.iloc[0:5000,:]
 
 from sklearn.preprocessing import LabelEncoder
 le = LabelEncoder()
