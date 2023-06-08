@@ -55,8 +55,12 @@ data = {'loan': loan,
             'borrower_score':borrower_score}
 features = pd.DataFrame(data,index=[0])
 	 
-
-dataset = pd.read_csv('loan_data.csv.gz', compression='gzip',low_memory=True)
+@st.cache
+def load_data(path):
+    dataset = pd.read_csv(path)
+    return dataset
+dataset = load_data('loan_data.csv.gz', compression='gzip',low_memory=True')
+#dataset = pd.read_csv('loan_data.csv.gz', compression='gzip',low_memory=True)
 
 from sklearn.preprocessing import LabelEncoder
 le = LabelEncoder()
