@@ -75,7 +75,7 @@ y=label_encoded_df['status']
 X_train,X_test,y_train,y_test=train_test_split(X,y,test_size=0.2)
 from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.metrics import accuracy_score
-model = GradientBoostingClassifier(max_depth= 5, n_estimators= 180)
+model = GradientBoostingClassifier(max_depth= 3, n_estimators= 50)
 model.fit(X_train, y_train)
 
 prediction_proba = model.predict_proba(features)
